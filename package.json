@@ -1,0 +1,70 @@
+{
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/github",
+        {
+          "assets": [
+            {
+              "path": "dist/windows-x64/**",
+              "name": "windows-x64",
+              "label": "windows-x64 distributable"
+            },
+            {
+              "path": "dist/macos-x64/**",
+              "name": "macos-x64",              
+              "label": "macos-x64 distributable"
+            },
+            {
+              "path": "dist/linux-x64/**",
+              "name": "linux-x64",              
+              "label": "linux-x64 distributable"
+            },
+            {
+              "path": "dist/linux-musl-x64/**",
+              "name": "linux-musl-x64",              
+              "label": "linux-musl-x64 distributable"
+            },
+            {
+              "path": "dist/linux-arm64/**",
+              "name": "linux-arm64",              
+              "label": "linux-arm64 distributable"
+            },
+            {
+              "path": "dist/linux-armv7/**",
+              "name": "linux-armv7",              
+              "label": "linux-armv7 distributable"
+            }
+          ]
+        }
+      ],
+      "@semantic-release/changelog",
+      "@semantic-release/git",
+      [
+        "semantic-release-slack-bot",
+        {
+          "notifyOnSuccess": true,
+          "notifyOnFail": true,
+          "markdownReleaseNotes": true
+        }
+      ]
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^9.1.1",
+    "@commitlint/config-conventional": "^9.1.1",
+    "husky": "^4.2.5"
+  }
+}

@@ -269,6 +269,14 @@ A test should be marked `#[ignore]` if:
 1. It does not _always_ pass `cargo test` in a vanilla environment (i.e., it does not need to run with `--test-threads 1`).
 2. Or, it runs for over a minute via a normal `cargo test` execution (the `cargo test` command will warn if this is not the case).
 
+This repository follows the [Angular Commit Message Convention](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines).
+Prior to making any commits to this repository, run the following to ensure commit messages follow this convention.
+```bash
+npm install
+```
+
+This will install [commitlint](https://github.com/conventional-changelog/commitlint), and help ensure commit messages follow the above format.
+
 ## Copyright and License
 
 The code and documentation copyright are attributed to blockstack.org for the year of 2020.
