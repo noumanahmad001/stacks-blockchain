@@ -907,6 +907,7 @@ pub struct RPCPeerInfoData {
     pub stacks_tip_burn_block: String,
     pub unanchored_tip: StacksBlockId,
     pub exit_at_block_height: Option<u64>,
+    pub network_name: String
 }
 
 #[derive(Debug, Clone, PartialEq, Copy, Hash)]

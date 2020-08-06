@@ -185,7 +185,8 @@ impl RPCPeerInfoData {
             stacks_tip,
             stacks_tip_burn_block: stacks_tip_burn_block.to_hex(),
             unanchored_tip: unconfirmed_tip,
-            exit_at_block_height: exit_at_block_height.cloned()
+            exit_at_block_height: exit_at_block_height.cloned(),
+            network_name: String::from(&burnchain.network_name)
         })
     }
 }
